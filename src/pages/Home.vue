@@ -8,7 +8,7 @@ defineOptions({
 onMounted(() => {
   loadBegin()
   setTimeout(() => {
-    loadEnd()
+    loadFail()
   }, 2000)
 })
 </script>

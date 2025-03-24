@@ -20,6 +20,15 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  failReason: {
+    type: Object,
+    default: () => {
+      return {
+        title: '加载失败',
+        desc: '未知原因，请联系管理员',
+      }
+    },
+  },
 })
 </script>
 
@@ -35,9 +44,14 @@ defineProps({
         <div class="loading-text">{{ tips }}</div>
       </template>
       <template v-else>
-        <div class="fail-container">
-          <slot></slot>
-          <div class="fail-reason">ddddddddddd</div>
+        <div class="fail-reason-wrapper">
+          <div class="fail-reason-img">
+            <img src="@/assets/imgs/fail.png" alt="fail" />
+          </div>
+          <div class="fail-reason-text">
+            <div class="fail-reason-text-title">{{ failReason.title }}</div>
+            <div class="fail-reason-text-desc">{{ failReason.desc }}</div>
+          </div>
         </div>
       </template>
     </div>
@@ -70,20 +84,7 @@ defineProps({
     justify-content: center;
     align-items: center;
   }
-  .fail-img {
-    width: 1rem;
-    height: 1rem;
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
   .loading-text {
-    font-size: 0.2rem;
-    color: #eee;
-    margin-top: 0.24rem;
-  }
-  .fail-reason {
     font-size: 0.2rem;
     color: #eee;
     margin-top: 0.24rem;
@@ -119,6 +120,36 @@ defineProps({
       font-weight: bold;
       letter-spacing: 0.01rem;
       animation: breathing 1.5s ease-in-out infinite;
+    }
+  }
+  .fail-reason-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .fail-reason-img {
+      width: 1rem;
+      height: 1rem;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .fail-reason-text {
+      margin-top: 0.24rem;
+      .fail-reason-text-title {
+        font-size: 0.24rem;
+        text-align: center;
+        color: #fff;
+      }
+      .fail-reason-text-desc {
+        font-size: 0.2rem;
+        text-align: center;
+        margin-top: 0.12rem;
+        max-width: 4.6rem;
+        color: #ccc;
+      }
     }
   }
 
