@@ -1,5 +1,15 @@
 // 统一使用downloadUrl & fileName的数据结构
-export const convertAssets = (sourceData) => {
+export const convertAssets = (params) => {
+  if (!params) {
+    throw new Error('接口数据为空，请检查参数是否正确')
+  }
+  let sourceData
+  if (params.modalityResultList) {
+    sourceData = params.modalityResultList
+  }
+  if (params.assetsList) {
+    sourceData = params.assetsList
+  }
   const assets = {}
   const handlerMap = {
     nucleus: nucleusHandler,

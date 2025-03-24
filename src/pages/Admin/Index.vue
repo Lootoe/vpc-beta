@@ -1,15 +1,14 @@
 <script setup>
 import { getImageInfo } from '@/utils/api'
 import { usePageLoading } from '@/components'
-import { convertAssets } from '@/core/convert/convertAssets'
+import { apiResultToPatient } from '@/core/convert/index'
 const { loadBegin, loadUpdate, loadEnd, loadFail } = usePageLoading()
 onMounted(() => {
   loadBegin()
   getImageInfo()
     .then((res) => {
-      console.log(res)
-      const assets = convertAssets(res.modalityResultList)
-      console.log(assets)
+      const patient = apiResultToPatient(res)
+      console.log(patient)
       loadUpdate({
         tips: '加载成功',
         delay: 500,
