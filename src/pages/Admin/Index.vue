@@ -1,23 +1,27 @@
 <script setup>
 import { getImageInfo } from '@/utils/api'
-import { onMounted } from 'vue'
 import { usePageLoading } from '@/components'
+import { convertAssets } from '@/core/convert/convertAssets'
 const { loadBegin, loadUpdate, loadEnd, loadFail } = usePageLoading()
 onMounted(() => {
   loadBegin()
   getImageInfo()
     .then((res) => {
+      console.log(res)
+      const assets = convertAssets(res.modalityResultList)
+      console.log(assets)
       loadUpdate({
         tips: '加载成功',
         delay: 500,
       }).then(() => {
         loadEnd()
       })
-      console.log(res)
     })
     .catch((err) => {
-      loadFail()
-      console.log(err)
+      console.error('err', err)
+      loadFail({
+        failReason: err.message,
+      })
     })
 })
 </script>

@@ -14,6 +14,7 @@ export function usePageLoading() {
     opacity: 1,
     loading: false,
     failed: false,
+    failReason: '',
   }
 
   const state = reactive({ ...initialState })
@@ -32,6 +33,7 @@ export function usePageLoading() {
             opacity: state.opacity,
             loading: state.loading,
             failed: state.failed,
+            failReason: state.failReason,
           })
         },
       })
@@ -127,9 +129,9 @@ export function usePageLoading() {
    *
    * @param {string} reason 加载失败的提示
    */
-  const loadFail = () => {
+  const loadFail = (config) => {
     state.failed = true
-    // 由于使用了响应式状态，这里不需要手动重新渲染
+    if (config?.failReason) state.failReason = config.failReason
   }
 
   return { loadBegin, loadUpdate, loadEnd, loadFail }

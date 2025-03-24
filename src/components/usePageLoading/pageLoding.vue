@@ -21,13 +21,8 @@ defineProps({
     default: false,
   },
   failReason: {
-    type: Object,
-    default: () => {
-      return {
-        title: '加载失败',
-        desc: '未知原因，请联系管理员',
-      }
-    },
+    type: String,
+    default: '请联系管理员',
   },
 })
 </script>
@@ -48,9 +43,9 @@ defineProps({
           <div class="fail-reason-img">
             <img src="@/assets/imgs/fail.png" alt="fail" />
           </div>
-          <div class="fail-reason-text">
-            <div class="fail-reason-text-title">{{ failReason.title }}</div>
-            <div class="fail-reason-text-desc">{{ failReason.desc }}</div>
+          <div class="fail-reason">
+            <div class="fail-reason-title">加载失败</div>
+            <div class="fail-reason-desc">{{ failReason }}</div>
           </div>
         </div>
       </template>
@@ -136,14 +131,14 @@ defineProps({
         width: 100%;
       }
     }
-    .fail-reason-text {
+    .fail-reason {
       margin-top: 0.24rem;
-      .fail-reason-text-title {
+      .fail-reason-title {
         font-size: 0.24rem;
         text-align: center;
         color: #fff;
       }
-      .fail-reason-text-desc {
+      .fail-reason-desc {
         font-size: 0.2rem;
         text-align: center;
         margin-top: 0.12rem;
