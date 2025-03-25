@@ -2,17 +2,23 @@
 export const convertImplantInfo = (params) => {
   const { config, leftChannel, rightChannel } = params
   const implantInfo = {
-    leads: {},
+    leads: [],
     config: {},
   }
   implantInfo.config = JSON.parse(config)
   leftChannel.implantList.forEach((obj) => {
     const { position } = obj
-    implantInfo.leads[position] = obj
+    implantInfo.leads.push({
+      leadType: obj.lead,
+      position,
+    })
   })
   rightChannel.implantList.forEach((obj) => {
     const { position } = obj
-    implantInfo.leads[position] = obj
+    implantInfo.leads.push({
+      leadType: obj.lead,
+      position,
+    })
   })
   return implantInfo
 }
