@@ -22,7 +22,7 @@ const defaultSceneConfig = {
 }
 
 export default class MainScene {
-  static dom = null
+  static selector = null
   static renderer = null
   static camera = null
   static controls = null
@@ -33,9 +33,10 @@ export default class MainScene {
   static init(options) {
     this.config = { ...defaultSceneConfig, ...options }
     //————渲染器————
-    this.dom = document.querySelector(this.config.selector)
-    const width = this.dom.clientWidth
-    const height = this.dom.clientHeight
+    this.selector = this.config.selector
+    const dom = document.querySelector(this.selector)
+    const width = dom.clientWidth
+    const height = dom.clientHeight
     this.renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
@@ -43,7 +44,7 @@ export default class MainScene {
     })
     this.renderer.setSize(width, height)
     this.renderer.setPixelRatio(width / height)
-    this.dom.appendChild(this.renderer.domElement)
+    dom.appendChild(this.renderer.domElement)
     this.scene = new THREE.Scene()
     //————相机————
     this.camera = new THREE.PerspectiveCamera(75, width / height, 1, this.config.cameraFar)
@@ -79,8 +80,9 @@ export default class MainScene {
   }
 
   static renderResize() {
-    const width = this.dom.clientWidth
-    const height = this.dom.clientHeight
+    const dom = document.querySelector(this.selector)
+    const width = dom.clientWidth
+    const height = dom.clientHeight
     this.renderer.setSize(width, height)
     this.renderer.setPixelRatio(width / height)
     this.camera.aspect = width / height
@@ -113,7 +115,7 @@ export default class MainScene {
     // 清空引用
     this.camera = null
     this.scene = null
-    this.dom = null
+    this.selector = null
     this.config = null
     this.lights = null
     this.controls = null

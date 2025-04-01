@@ -118,4 +118,12 @@ export default class LeadManager {
       })
     })
   }
+
+  static getChip(position, index) {
+    const lead = this.getLead(position)
+    if (!lead) return null
+
+    // 尝试在chips数组中找到对应index的芯片
+    return lead.chips.find((chip) => chip.index === index) || null
+  }
 }

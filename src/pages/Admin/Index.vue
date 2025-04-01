@@ -2,9 +2,10 @@
 import { getImageInfo } from '@/utils/api'
 import { usePageLoading } from '@/components'
 import LeadManager from '@/core/lead'
-import MainScene from '@/modules/scene/mainScene'
+import MainScene from '@/modules/scene'
 import PatientInfo from '@/core/PatientInfo'
 import { renderLead } from '@/modules/lead/renderLead'
+import watchRaycastEvent from '@/modules/racastEvent'
 
 const { loadBegin, loadUpdate, loadEnd, loadFail } = usePageLoading()
 
@@ -13,6 +14,7 @@ onMounted(() => {
   MainScene.init({
     selector: '.main-scene',
   })
+  watchRaycastEvent()
   getImageInfo()
     .then((res) => {
       PatientInfo.init(res)

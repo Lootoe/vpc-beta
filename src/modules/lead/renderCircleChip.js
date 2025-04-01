@@ -36,7 +36,7 @@ const createChipMaterial = (width, height, text, fontSize, color) => {
     emissiveMap: texture,
     transparent: true,
     emissive: 0xffffff,
-    side: THREE.DoubleSide,
+    side: THREE.FrontSide,
     metalness: 1,
     roughness: 0.6,
     depthTest: true,
@@ -91,6 +91,11 @@ export const renderCircleChip = (lead) => {
       geometry,
       createChipMaterial(400, 400 * (chipConfig.len / 3), chip.index, 60, chip.color)
     )
+    mesh.name = 'chip'
+    mesh.userData = {
+      position: chip.position,
+      index: chip.index,
+    }
     chip.mesh = mesh
     chipMeshes.push(mesh)
   })
