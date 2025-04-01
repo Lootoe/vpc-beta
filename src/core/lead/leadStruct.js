@@ -1,9 +1,7 @@
 import { leadEnum } from './leadEnum'
-import { Chip } from '@/core/chip'
-import { LeadManager } from './LeadManager'
+import Chip from '@/core/chip'
 
 export class Lead {
-  leadUrl = ''
   leadType = ''
   leadConfig = {}
   chips = []
@@ -12,6 +10,7 @@ export class Lead {
   constructor(params) {
     this.position = params.position
     this.leadType = params.leadType
+    this.indexes = params.indexes
     this.initLeadConfig()
     this.initChips()
   }
@@ -26,8 +25,8 @@ export class Lead {
 
   initChips() {
     const leadConfig = this.leadConfig
-    const chips = leadConfig.chips.map((item, i) => {
-      const index = LeadManager.getChipIndex(this.position, i)
+    const chips = leadConfig.chipConfigs.map((item, i) => {
+      const index = this.indexes[i]
       return new Chip(item, { position: this.position, index })
     })
     this.chips = chips

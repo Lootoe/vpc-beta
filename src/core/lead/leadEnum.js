@@ -4,7 +4,7 @@ export const leadEnum = [
     name: '1200-30',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -31,7 +31,7 @@ export const leadEnum = [
     name: '1200-40',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -58,7 +58,7 @@ export const leadEnum = [
     name: '1210-30',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -85,7 +85,7 @@ export const leadEnum = [
     name: '1210-40',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -112,7 +112,7 @@ export const leadEnum = [
     name: '1242',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -139,7 +139,7 @@ export const leadEnum = [
     name: '1242-S',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -166,7 +166,7 @@ export const leadEnum = [
     name: '1211-40',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -193,7 +193,7 @@ export const leadEnum = [
     name: 'SR1212-S',
     number: 8,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -240,7 +240,7 @@ export const leadEnum = [
     name: 'SR1212',
     number: 8,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -287,7 +287,7 @@ export const leadEnum = [
     name: 'SR1202',
     number: 8,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -334,7 +334,7 @@ export const leadEnum = [
     name: 'SR1202-S',
     number: 8,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -381,7 +381,7 @@ export const leadEnum = [
     name: 'SR120A',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -408,7 +408,7 @@ export const leadEnum = [
     name: 'SR121A',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -435,7 +435,7 @@ export const leadEnum = [
     name: 'SR121B',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         index: 0,
         type: CHIP_TYPE.CIRCLE,
@@ -466,7 +466,7 @@ export const leadEnum = [
     name: 'NL0104',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
@@ -493,7 +493,7 @@ export const leadEnum = [
     name: 'NL0204',
     number: 4,
     radius: 1.27 / 2,
-    chips: [
+    chipConfigs: [
       {
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
