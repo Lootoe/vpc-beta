@@ -43,7 +43,6 @@ export default class MainScene {
     })
     this.renderer.setSize(width, height)
     this.renderer.setPixelRatio(width / height)
-    this.renderer.setClearColor(this.config.backgroundColor)
     this.dom.appendChild(this.renderer.domElement)
     this.scene = new THREE.Scene()
     //————相机————
@@ -62,7 +61,7 @@ export default class MainScene {
     const ambientLight = new THREE.AmbientLight(0xffffff, this.config.ambientStrength)
     this.scene.add(ambientLight)
     //————灯光————
-    const lights = createLights(this.config.lightStrength, this.config.lightDistance)
+    const lights = createLights(4, 500)
     lights.forEach((light) => {
       this.scene.add(light)
     })

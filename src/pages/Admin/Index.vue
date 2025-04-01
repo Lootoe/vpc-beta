@@ -4,6 +4,8 @@ import { usePageLoading } from '@/components'
 import LeadManager from '@/core/lead'
 import MainScene from '@/modules/scene/mainScene'
 import PatientInfo from '@/core/PatientInfo'
+import { renderLead } from '@/modules/lead/renderLead'
+
 const { loadBegin, loadUpdate, loadEnd, loadFail } = usePageLoading()
 
 onMounted(() => {
@@ -16,15 +18,20 @@ onMounted(() => {
       PatientInfo.init(res)
       const leadConfigs = PatientInfo.implantInfo.leads
       const isMultiIpg = PatientInfo.implantInfo.config?.isMultiIpg
-
       // 使用LeadManager初始化所有电极
-      LeadManager.initLeads(leadConfigs, isMultiIpg)
-      console.log(LeadManager.getAllLeads())
-      loadUpdate({
-        tips: '加载成功',
-        delay: 500,
-      }).then(() => {
-        loadEnd()
+      LeadManager.initLeads(leadConfigs, isMultiIpg).then(() => {
+        console.log(LeadManager.getAllLeads())
+        const leads = LeadManager.getAllLeads()
+        leads.forEach((lead) => {
+          const leadMesh = renderLead(lead)
+          MainScene.addMesh(leadMesh)
+        })
+        loadUpdate({
+          tips: '加载成功',
+          delay: 500,
+        }).then(() => {
+          loadEnd()
+        })
       })
     })
     .catch((err) => {
@@ -44,5 +51,6 @@ onMounted(() => {
 .main-scene {
   width: 100vw;
   height: 100vh;
+  background-color: #232a3b;
 }
 </style>

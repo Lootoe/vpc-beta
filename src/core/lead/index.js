@@ -29,7 +29,7 @@ export default class LeadManager {
       })
       this.leads.push(lead)
     })
-    this.loadLeads()
+    return this.loadLeads()
   }
 
   // 分配芯片索引 (原ChipIndexManager功能)
