@@ -10,7 +10,6 @@ export const calcChipIndex = (leads, position, index, isMultiIpg) => {
   if (isMultiIpg === true) {
     // 基于position直接计算
     const startIndex = position % 2 === 1 ? 0 : currentLeadConfig.number
-    console.log('index', index)
     return startIndex + index
   } else {
     // 基于leads和position计算起始索引
