@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import MainScene from '@/modules/scene'
+import MainScene from '@/core/scene'
 import { onClickChip } from './onClickChip'
 
 export default () => {

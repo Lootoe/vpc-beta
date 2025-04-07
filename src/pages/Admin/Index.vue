@@ -2,9 +2,8 @@
 import { getImageInfo } from '@/utils/api'
 import { usePageLoading } from '@/components'
 import LeadManager from '@/core/lead'
-import MainScene from '@/modules/scene'
+import MainScene from '@/core/scene'
 import PatientInfo from '@/core/PatientInfo'
-import { renderLead } from '@/modules/lead/renderLead'
 import watchRaycastEvent from '@/modules/racastEvent'
 
 const { loadBegin, loadUpdate, loadEnd, loadFail } = usePageLoading()
@@ -18,16 +17,10 @@ onMounted(() => {
   getImageInfo()
     .then((res) => {
       PatientInfo.init(res)
-      const leadConfigs = PatientInfo.implantInfo.leads
-      const isMultiIpg = PatientInfo.implantInfo.config?.isMultiIpg
       // 使用LeadManager初始化所有电极
-      LeadManager.initLeads(leadConfigs, isMultiIpg).then(() => {
+      LeadManager.init().then(() => {
+        LeadManager.render()
         console.log(LeadManager.getAllLeads())
-        const leads = LeadManager.getAllLeads()
-        leads.forEach((lead) => {
-          const leadMesh = renderLead(lead)
-          MainScene.addMesh(leadMesh)
-        })
         loadUpdate({
           tips: '加载成功',
           delay: 500,

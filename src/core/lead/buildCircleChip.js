@@ -62,7 +62,7 @@ const createTransformMatrix = (startVector, endVector) => {
   return transformMatrix
 }
 
-export const renderCircleChip = (lead) => {
+export const buildCircleChip = (lead) => {
   const vectors = lead.points.map((v) => new THREE.Vector3().fromArray(v))
   const leadBottomVector = vectors[0]
   const curve = new THREE.CatmullRomCurve3(vectors)
@@ -91,12 +91,12 @@ export const renderCircleChip = (lead) => {
       geometry,
       createChipMaterial(400, 400 * (chipConfig.len / 3), chip.index, 60, chip.color)
     )
+    // 用于定位是哪个电极片
     mesh.name = 'chip'
     mesh.userData = {
       position: chip.position,
       index: chip.index,
     }
-    chip.mesh = mesh
     chipMeshes.push(mesh)
   })
   return chipMeshes

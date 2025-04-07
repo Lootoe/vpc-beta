@@ -47,7 +47,7 @@ export default class MainScene {
     dom.appendChild(this.renderer.domElement)
     this.scene = new THREE.Scene()
     //————相机————
-    this.camera = new THREE.PerspectiveCamera(75, width / height, 1, this.config.cameraFar)
+    this.camera = new THREE.PerspectiveCamera(50, width / height, 1, this.config.cameraFar)
     this.camera.lookAt(new THREE.Vector3(0, 0, 0))
     this.camera.position.set(0, 0, this.config.screenDistance)
     this.scene.add(this.camera)

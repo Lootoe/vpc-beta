@@ -41,7 +41,7 @@ const renderHalfBall = (leadCurvePoints, radius = 1.27 / 2) => {
   return ball
 }
 
-export const renderPole = (leadCurvePoints, radius = 1.27 / 2) => {
+export const buildPole = (leadCurvePoints, radius = 1.27 / 2) => {
   const cylinder = renderCylinder(leadCurvePoints, radius)
   const halfBall = renderHalfBall(leadCurvePoints, radius)
   const cylinderMesh = new THREE.Mesh(cylinder, createPoleMaterial())
