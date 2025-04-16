@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
 import { computeBoundsTree, disposeBoundsTree, acceleratedRaycast } from 'three-mesh-bvh'
-import { createLights, disposeObject } from './mainSceneUtils'
+import { disposeObject } from './mainSceneUtils'
+import createLight from './light'
 
 // 加速射线检测的重中之重
 THREE.BufferGeometry.prototype.computeBoundsTree = computeBoundsTree
@@ -16,7 +17,7 @@ const defaultSceneConfig = {
   /** 控制器的缩放距离限制 */
   zoomLimit: [1, 500],
   /**环境光的强度 */
-  ambientStrength: 1,
+  ambientStrength: 0.2,
   /** 背景色 */
   backgroundColor: 0x000000,
 }
@@ -61,14 +62,13 @@ export default class MainScene {
     //————环境光————
     const ambientLight = new THREE.AmbientLight(0xffffff, this.config.ambientStrength)
     this.scene.add(ambientLight)
-    //————灯光————
-    const lights = createLights(4, 500)
-    lights.forEach((light) => {
-      this.scene.add(light)
-    })
+    //————主光源————
+    const { lightObjects, updateLightPosition } = createLight(6, 500)
+    this.scene.add(lightObjects)
     //————动画————
     const renderLoop = () => {
       this.controls.update()
+      updateLightPosition(this.camera)
       this.renderer.autoClear = false
       this.renderer.clear()
       this.renderer.render(this.scene, this.camera)

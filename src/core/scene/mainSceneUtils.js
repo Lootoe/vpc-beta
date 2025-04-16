@@ -1,22 +1,3 @@
-import * as THREE from 'three'
-
-export const createLights = (strength, distance) => {
-  const light1 = new THREE.DirectionalLight(0xffffff, strength)
-  light1.position.set(0, distance, 0)
-  const light2 = new THREE.DirectionalLight(0xffffff, strength)
-  light2.position.set(0, -distance, 0)
-  const light3 = new THREE.DirectionalLight(0xffffff, strength)
-  light3.position.set(0, 0, distance)
-  const light4 = new THREE.DirectionalLight(0xffffff, strength)
-  light4.position.set(0, 0, -distance)
-  const light5 = new THREE.DirectionalLight(0xffffff, strength)
-  light5.position.set(distance, 0, 0)
-  const light6 = new THREE.DirectionalLight(0xffffff, strength)
-  light6.position.set(-distance, 0, 0)
-
-  return [light1, light2, light3, light4, light5, light6]
-}
-
 // 销毁材质
 export const disposeMaterial = (material) => {
   if (material.map) {
