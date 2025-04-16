@@ -1,5 +1,5 @@
 import { leadEnum } from './leadEnum'
-import Chip from '@/core/chip'
+import { Chip } from '@/core/chip'
 import { buildLead } from './buildLead'
 import { buildCircleChip } from './buildCircleChip'
 import MainScene from '@/core/scene'
