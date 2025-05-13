@@ -1,4 +1,8 @@
-import { CHIP_TYPE } from '../chip/type'
+export const CHIP_TYPE = {
+  CIRCLE: 'circle',
+  SEGMENT: 'segment',
+}
+
 export const leadEnum = [
   {
     name: '1200-30',
@@ -6,21 +10,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
@@ -33,21 +41,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
@@ -60,21 +72,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
@@ -87,21 +103,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
@@ -114,21 +134,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 3,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 2,
         len: 3,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 4,
         len: 3,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 4,
         len: 3,
@@ -141,21 +165,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 3,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 2,
         len: 3,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 4,
         len: 3,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 4,
         len: 3,
@@ -168,21 +196,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
@@ -195,41 +227,49 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 4,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 5,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 6,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 7,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
@@ -242,41 +282,49 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 4,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 5,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 6,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
       },
       {
+        index: 7,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1.5,
         len: 1.5,
@@ -289,41 +337,49 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 4,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 5,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 6,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 7,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
@@ -336,41 +392,49 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 4,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 5,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 6,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 7,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
@@ -383,21 +447,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 0.5,
         len: 1.5,
@@ -410,21 +478,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 1.5,
@@ -468,21 +540,25 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 3,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 2,
         len: 3,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 4,
         len: 3,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 4,
         len: 3,
@@ -495,24 +571,89 @@ export const leadEnum = [
     radius: 1.27 / 2,
     chipConfigs: [
       {
+        index: 0,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 1,
         len: 3,
       },
       {
+        index: 1,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 2,
         len: 3,
       },
       {
+        index: 2,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 4,
         len: 3,
       },
       {
+        index: 3,
         type: CHIP_TYPE.CIRCLE,
         prevDistance: 4,
         len: 3,
+      },
+    ],
+  },
+  {
+    name: 'X1331-0.5',
+    number: 8,
+    radius: 1.27 / 2,
+    chipConfigs: [
+      {
+        index: 0,
+        type: CHIP_TYPE.CIRCLE,
+        prevDistance: 0.5,
+        len: 1.5,
+      },
+      {
+        index: 1,
+        type: CHIP_TYPE.SEGMENT,
+        prevDistance: 0.5,
+        len: 1.5,
+        fragment: 'a',
+      },
+      {
+        index: 1,
+        type: CHIP_TYPE.SEGMENT,
+        prevDistance: 0.5,
+        len: 1.5,
+        fragment: 'b',
+      },
+      {
+        index: 1,
+        type: CHIP_TYPE.SEGMENT,
+        prevDistance: 0.5,
+        len: 1.5,
+        fragment: 'c',
+      },
+      {
+        index: 2,
+        type: CHIP_TYPE.SEGMENT,
+        prevDistance: 0.5,
+        len: 1.5,
+        fragment: 'a',
+      },
+      {
+        index: 2,
+        type: CHIP_TYPE.SEGMENT,
+        prevDistance: 0.5,
+        len: 1.5,
+        fragment: 'b',
+      },
+      {
+        index: 2,
+        type: CHIP_TYPE.SEGMENT,
+        prevDistance: 0.5,
+        len: 1.5,
+        fragment: 'c',
+      },
+      {
+        index: 3,
+        type: CHIP_TYPE.CIRCLE,
+        prevDistance: 0.5,
+        len: 1.5,
       },
     ],
   },

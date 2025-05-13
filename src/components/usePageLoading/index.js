@@ -8,21 +8,22 @@ document.body.appendChild(root)
 // 创建一个应用实例
 let app = null
 
+const initialState = {
+  tips: '加载中',
+  opacity: 1,
+  loading: false,
+  failed: false,
+  failReason: '',
+  progress: 0, // 添加进度状态
+}
+
+const state = reactive({ ...initialState })
+
+const resetState = () => {
+  Object.assign(state, initialState)
+}
+
 export function usePageLoading() {
-  const initialState = {
-    tips: '加载中',
-    opacity: 1,
-    loading: false,
-    failed: false,
-    failReason: '',
-  }
-
-  const state = reactive({ ...initialState })
-
-  const resetState = () => {
-    Object.assign(state, initialState)
-  }
-
   // 初始化应用实例
   const initApp = () => {
     if (!app) {
@@ -34,6 +35,7 @@ export function usePageLoading() {
             loading: state.loading,
             failed: state.failed,
             failReason: state.failReason,
+            progress: state.progress, // 传递进度值到组件
           })
         },
       })
@@ -47,6 +49,7 @@ export function usePageLoading() {
    * @param {Object} config.tips Loading文案
    * @param {Number} config.opacity 背景透明度
    * @param {Number} config.delay 延迟多久后执行.then后续的逻辑
+   * @param {Number} config.progress 当前进度值（0-100）
    * @returns Promise
    */
   const loadBegin = (config) => {
@@ -55,7 +58,7 @@ export function usePageLoading() {
       state.loading = true
       if (config?.tips) state.tips = config.tips
       if (config?.opacity) state.opacity = config.opacity
-
+      if (config?.progress !== undefined) state.progress = config.progress
       // 初始化应用实例，之后状态变化会自动触发更新
       initApp()
 
@@ -75,13 +78,14 @@ export function usePageLoading() {
    * @param {Object} config.tips Loading文案
    * @param {Number} config.opacity 背景透明度
    * @param {Number} config.delay 延迟多久后执行.then后续的逻辑
+   * @param {Number} config.progress 当前进度值（0-100）
    * @returns Promise
    */
   const loadUpdate = (config) => {
     return new Promise((resolve) => {
       if (config?.tips) state.tips = config.tips
       if (config?.opacity) state.opacity = config.opacity
-
+      if (config?.progress !== undefined) state.progress = config.progress
       // 由于使用了响应式状态，这里不需要手动重新渲染
 
       if (config?.delay) {
